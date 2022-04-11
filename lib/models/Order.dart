@@ -15,24 +15,19 @@ class Order {
     required this.grocery,
     required this.quantity,
     required this.totalPrice,
-    required this.createdAt,
-    required this.updatedAt,
   });
 
   String id;
   List<Grocery> grocery;
   int quantity;
   int totalPrice;
-  DateTime createdAt;
-  DateTime updatedAt;
 
   factory Order.fromJson(Map<String, dynamic> json) => Order(
     id: json["id"],
     grocery: List<Grocery>.from(json["grocery"].map((x) => Grocery.fromJson(x))),
     quantity: json["quantity"],
     totalPrice: json["total_price"],
-    createdAt: DateTime.parse(json["created_at"]),
-    updatedAt: DateTime.parse(json["updated_at"]),
+
   );
 
   Map<String, dynamic> toJson() => {
@@ -40,8 +35,7 @@ class Order {
     "grocery": List<dynamic>.from(grocery.map((x) => x.toJson())),
     "quantity": quantity,
     "total_price": totalPrice,
-    "created_at": createdAt == null ? null : createdAt.toIso8601String(),
-    "updated_at": updatedAt == null ? null : updatedAt.toIso8601String(),
+
   };
 }
 

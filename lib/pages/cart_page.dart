@@ -40,7 +40,7 @@ class _GetCatalogState extends State<GetCatalog> {
             case ConnectionState.done:
               if (snapshot.hasError) {
                 return Center(
-                  child: Text("Some Error occured"),
+                  child: Text("Some Error occured "+ snapshot.error.toString()),
                 );
               }
               return ListView.builder(
@@ -66,8 +66,8 @@ class _GetCatalogState extends State<GetCatalog> {
                                   style: TextStyle(color: Colors.grey),
                                   textAlign: TextAlign.left),
                               Text(
-                                  'Order Date :' +
-                                      ordersData[index].createdAt.toString(),
+                                  'Order Date :' , //+
+                                      //ordersData[index].createdAt.toString(),
                                   style: TextStyle(color: Colors.grey),
                                   textAlign: TextAlign.left),
                             ]),

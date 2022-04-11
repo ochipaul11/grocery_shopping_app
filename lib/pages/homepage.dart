@@ -49,7 +49,7 @@ class _HomepageState extends State<Homepage> {
               icon: Icon(
                 Icons.shopping_cart,
               ),
-              label: 'Cart',
+              label: 'Orders',
               backgroundColor: Colors.black12),
           BottomNavigationBarItem(
             icon: Icon(
